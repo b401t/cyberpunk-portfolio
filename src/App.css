@@ -1,0 +1,71 @@
+/* ============================================
+   APP LAYOUT
+   ============================================ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Main Content --- */
+.app__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+/* Fade transitions giữa các tab */
+.app__content--fade-in {
+  animation: fadeIn 0.25s ease;
+}
+
+.app__content--fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* --- Footer --- */
+.app__footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.app__footer-line {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.app__footer p {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.app__footer-char {
+  color: var(--neon-green);
+  margin-right: 2px;
+}
+
+.app__footer-neon {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.5);
+}
+
+.app__footer-year {
+  color: var(--neon-pink);
+}
+
+.app__footer-tagline {
+  font-style: italic;
+  opacity: 0.6;
+}

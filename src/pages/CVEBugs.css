@@ -1,0 +1,314 @@
+/* ============================================
+   CVE / BUGS PAGE
+   ============================================ */
+
+.cve-page {
+  padding-top: 5rem;
+}
+
+.cve-page__header {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.cve-page__header .section-title {
+  display: block;
+  text-align: center;
+}
+
+.cve-page__header .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cve-page__subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+.cve-page__subtitle code {
+  background: rgba(0, 240, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+}
+
+/* --- Stats --- */
+.cve-page__stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  max-width: 600px;
+}
+
+.cve-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  min-width: 90px;
+  transition: all var(--transition-normal);
+}
+
+.cve-stat:hover {
+  transform: translateY(-2px);
+}
+
+.cve-stat--high:hover {
+  border-color: var(--neon-red);
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.2);
+}
+
+.cve-stat--medium:hover {
+  border-color: var(--neon-orange);
+  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.2);
+}
+
+.cve-stat--low:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 4px 15px rgba(0, 255, 102, 0.2);
+}
+
+.cve-stat__num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.cve-stat--high .cve-stat__num { color: var(--neon-red); text-shadow: var(--glow-red); }
+.cve-stat--medium .cve-stat__num { color: var(--neon-orange); text-shadow: var(--glow-orange); }
+.cve-stat--low .cve-stat__num { color: var(--neon-green); text-shadow: var(--glow-green); }
+
+.cve-stat__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* --- Controls --- */
+.cve-page__controls {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Filter buttons */
+.cve-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cve-filter__label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cve-filter__buttons {
+  display: flex;
+  gap: 4px;
+  background: rgba(10, 10, 25, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.cve-filter__btn {
+  padding: 0.35rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.5px;
+}
+
+.cve-filter__btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cve-filter__btn--active {
+  background: rgba(0, 240, 255, 0.12);
+  color: var(--neon-cyan);
+}
+
+.cve-filter__btn--active[data-level='high'] {
+  background: rgba(255, 23, 68, 0.15);
+  color: var(--neon-red);
+}
+
+.cve-filter__btn--active[data-level='medium'] {
+  background: rgba(255, 106, 0, 0.15);
+  color: var(--neon-orange);
+}
+
+.cve-filter__btn--active[data-level='low'] {
+  background: rgba(0, 255, 102, 0.15);
+  color: var(--neon-green);
+}
+
+/* Search */
+.cve-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(10, 10, 25, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.cve-search:focus-within {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
+}
+
+.cve-search__icon {
+  font-size: 0.9rem;
+}
+
+.cve-search__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  min-width: 220px;
+}
+
+.cve-search__input::placeholder {
+  color: var(--text-muted);
+}
+
+/* --- Content --- */
+.cve-page__content {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+/* Loading */
+.cve-page__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+
+.cve-page__spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cve-page__loading p {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* Error & Empty */
+.cve-page__error,
+.cve-page__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cve-page__error p {
+  color: var(--neon-red);
+  font-family: var(--font-mono);
+}
+
+.cve-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cve-page__empty p {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Grid */
+.cve-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Count */
+.cve-page__count {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .cve-page__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cve-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cve-search__input {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .cve-page__stats {
+    gap: 0.75rem;
+  }
+
+  .cve-stat {
+    padding: 0.6rem 1rem;
+    min-width: 70px;
+  }
+
+  .cve-stat__num {
+    font-size: 1.3rem;
+  }
+}

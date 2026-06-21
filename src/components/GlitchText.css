@@ -1,0 +1,84 @@
+/* ============================================
+   GLITCH TEXT
+   ============================================ */
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch__layer {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.glitch__layer--cyan,
+.glitch__layer--pink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.glitch__layer--cyan {
+  color: var(--neon-cyan);
+  transform: translate(2px, -2px);
+  clip-path: inset(20% 0 40% 0);
+}
+
+.glitch__layer--pink {
+  color: var(--neon-pink);
+  transform: translate(-2px, 2px);
+  clip-path: inset(60% 0 10% 0);
+}
+
+/* Hover trigger: hiện layers */
+.glitch:hover .glitch__layer--cyan,
+.glitch:hover .glitch__layer--pink {
+  opacity: 0.8;
+}
+
+.glitch:hover .glitch__layer--cyan {
+  animation: glitch-cyan 0.3s ease infinite;
+}
+
+.glitch:hover .glitch__layer--pink {
+  animation: glitch-pink 0.3s ease 0.1s infinite;
+}
+
+/* Active trigger (manual) */
+.glitch--active .glitch__layer--cyan,
+.glitch--active .glitch__layer--pink {
+  opacity: 0.8;
+}
+
+.glitch--active .glitch__layer--cyan {
+  animation: glitch-cyan 0.15s ease 2;
+}
+
+.glitch--active .glitch__layer--pink {
+  animation: glitch-pink 0.15s ease 0.05s 2;
+}
+
+@keyframes glitch-cyan {
+  0% { transform: translate(2px, -2px); }
+  20% { transform: translate(-3px, 2px); }
+  40% { transform: translate(3px, -1px); }
+  60% { transform: translate(-1px, -3px); }
+  80% { transform: translate(2px, 3px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-pink {
+  0% { transform: translate(-2px, 2px); }
+  20% { transform: translate(3px, -2px); }
+  40% { transform: translate(-3px, 1px); }
+  60% { transform: translate(1px, 3px); }
+  80% { transform: translate(-2px, -2px); }
+  100% { transform: translate(0); }
+}

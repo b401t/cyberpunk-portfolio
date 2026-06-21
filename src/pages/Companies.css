@@ -1,0 +1,46 @@
+/* ============================================
+   COMPANIES PAGE
+   ============================================ */
+
+.companies {
+  padding-top: 5rem;
+}
+
+.companies__header {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.companies__header .section-title {
+  display: block;
+  text-align: center;
+}
+
+.companies__header .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.companies__subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+}
+
+/* --- Timeline container --- */
+.companies__timeline {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .companies__timeline {
+    max-width: 100%;
+    padding: 0 0.75rem 1.5rem;
+  }
+}
