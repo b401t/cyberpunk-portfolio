@@ -39,7 +39,7 @@ export default function Home() {
 
           <p className="hero__output">
             <GlitchText
-              text="TRUONG CHI BAO"
+              text="b401t"
               tag="h1"
               className="hero__name"
             />
