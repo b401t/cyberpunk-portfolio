@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   // Đổi base thành "/<repo-name>/" khi deploy lên GitHub Pages
   // Ví dụ: repo tên "cyberpunk-portfolio" → base: "/cyberpunk-portfolio/"
-  base: './',
+  base: '/cyberpunk-portfolio/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
